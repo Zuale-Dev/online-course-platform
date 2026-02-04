@@ -4,11 +4,10 @@ const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    // Krijimi i përdoruesit në DB
     const user = await User.create({
       name,
       email,
-      password, // Shënim: Nesër do e bëjmë hash me bcrypt
+      password, 
     });
 
     res.status(201).json({
