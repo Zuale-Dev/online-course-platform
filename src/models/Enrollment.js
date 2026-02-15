@@ -21,5 +21,7 @@ const enrollmentSchema = new mongoose.Schema({
     }
 }, { timestamps: true }); 
 
+enrollmentSchema.index({ user: 1, course: 1 }, { unique: true });
+
 const Enrollment = mongoose.model('Enrollment', enrollmentSchema);
 module.exports = Enrollment;
